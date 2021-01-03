@@ -110,6 +110,8 @@ public final class Captcha implements Serializable {
 
         /**
          * Add a background using the default {@link BackgroundProducer} (a {@link TransparentBackgroundProducer}).
+         *
+         * @return the Builder
          */
         public Builder addBackground() {
             return addBackground(new TransparentBackgroundProducer());
@@ -119,6 +121,7 @@ public final class Captcha implements Serializable {
          * Add a background using the given {@link BackgroundProducer}.
          *
          * @param bgProd Background Producer
+         * @return the Builder
          */
         public Builder addBackground(BackgroundProducer bgProd) {
             _bg = bgProd.getBackground(_img.getWidth(), _img.getHeight());
@@ -128,6 +131,8 @@ public final class Captcha implements Serializable {
 
         /**
          * Generate the answer to the CAPTCHA using the {@link DefaultTextProducer}.
+         *
+         * @return the Builder
          */
         public Builder addText() {
             return addText(new DefaultTextProducer());
@@ -138,6 +143,7 @@ public final class Captcha implements Serializable {
          * {@link TextProducer}.
          *
          * @param txtProd TextProducer
+         * @return the Builder
          */
         public Builder addText(TextProducer txtProd) {
             return addText(txtProd, new DefaultWordRenderer());
@@ -149,6 +155,7 @@ public final class Captcha implements Serializable {
          * {@link WordRenderer}.
          *
          * @param wRenderer WordRenderer
+         * @return the Builder
          */
         public Builder addText(WordRenderer wRenderer) {
             return addText(new DefaultTextProducer(), wRenderer);
@@ -161,6 +168,7 @@ public final class Captcha implements Serializable {
          *
          * @param txtProd   TextProducer
          * @param wRenderer WordRenderer
+         * @return the Builder
          */
         public Builder addText(TextProducer txtProd, WordRenderer wRenderer) {
             _answer += txtProd.getText();
@@ -171,6 +179,8 @@ public final class Captcha implements Serializable {
 
         /**
          * Add noise using the default {@link NoiseProducer} (a {@link CurvedLineNoiseProducer}).
+         *
+         * @return the Builder
          */
         public Builder addNoise() {
             return this.addNoise(new CurvedLineNoiseProducer());
@@ -180,6 +190,7 @@ public final class Captcha implements Serializable {
          * Add noise using the given NoiseProducer.
          *
          * @param nProd NoiseProducer
+         * @return the Builder
          */
         public Builder addNoise(NoiseProducer nProd) {
             nProd.makeNoise(_img);
@@ -188,6 +199,8 @@ public final class Captcha implements Serializable {
 
         /**
          * Gimp the image using the default {@link GimpyRenderer} (a {@link RippleGimpyRenderer}).
+         *
+         * @return the Builder
          */
         public Builder gimp() {
             return gimp(new RippleGimpyRenderer());
@@ -197,6 +210,7 @@ public final class Captcha implements Serializable {
          * Gimp the image using the given {@link GimpyRenderer}.
          *
          * @param gimpy GimpyRenderer
+         * @return the Builder
          */
         public Builder gimp(GimpyRenderer gimpy) {
             gimpy.gimp(_img);
@@ -205,6 +219,8 @@ public final class Captcha implements Serializable {
 
         /**
          * Draw a single-pixel wide black border around the image.
+         *
+         * @return the Builder
          */
         public Builder addBorder() {
             _addBorder = true;
