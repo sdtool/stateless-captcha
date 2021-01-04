@@ -58,10 +58,9 @@ public class RandomNumberVoiceProducer implements VoiceProducer {
      * Conceptually the map must look like the following:
      *
      * <pre>
-     * {1 => ["/my_sounds/1-quiet.wav", "/my_sounds/1-loud.wav"],
-     *  2 => ["/my_sounds/2-quiet.wav", "/my_sounds/2-loud.wav"]}
+     * 1 &rarr; ["/my_sounds/1-quiet.wav", "/my_sounds/1-loud.wav"]
+     * 2 &rarr; ["/my_sounds/2-quiet.wav", "/my_sounds/2-loud.wav"]
      * </pre>
-     *
      * @param voices the voices
      */
     public RandomNumberVoiceProducer(Map<Integer, String[]> voices) {

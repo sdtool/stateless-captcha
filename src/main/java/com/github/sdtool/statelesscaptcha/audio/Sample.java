@@ -58,6 +58,8 @@ public class Sample {
      * used by {@link AudioInputStream}. Typically this will be used with
      * a {@link Sample} that has been modified from its original.
      *
+     * @param sampleCount sample count
+     * @param sample data samples
      * @return A byte[] representing a sample
      * @see <a href="http://en.wiktionary.org/wiki/yak_shaving">Yak Shaving</a>
      */
@@ -126,6 +128,7 @@ public class Sample {
      * @param begin the beginning
      * @param end the end
      * @param samples the samples
+     * @return interleaved samples
      * @throws IOException if exception reading
      * @throws IllegalArgumentException if invalid bytes
      */
