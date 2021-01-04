@@ -31,7 +31,7 @@
     <scm>
         <connection>scm:git:git://github.com/sdtool/stateless-captcha.git</connection>
         <developerConnection>scm:git:ssh://github.com/sdtool/stateless-captcha.git</developerConnection>
-        <url>https://github.com/sdtool/stateless-captcha/tree/master</url>
+        <url>https://github.com/sdtool/stateless-captcha</url>
     </scm>
 
     <properties>
