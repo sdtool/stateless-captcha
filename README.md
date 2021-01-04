@@ -1,6 +1,6 @@
-# stateless-captcha
+# stateless-captcha for java
 
-Simple standalone captcha library for Java 8. Stateless verification implementation for custom usage (such as spring
+Simple standalone stateless captcha library for Java 8. Stateless verification implementation for custom usage (such as spring
 boot stateless microservice mode).
 
 Based on http://simplecaptcha.sourceforge.net/ version 1.2.1
