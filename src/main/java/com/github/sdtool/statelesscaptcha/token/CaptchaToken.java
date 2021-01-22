@@ -8,24 +8,14 @@ package com.github.sdtool.statelesscaptcha.token;
 public class CaptchaToken {
 
     /**
-     * Base 64 encoded image
+     * Base 64 encoded data
      */
-    private String base64Image;
+    private String base64Data;
 
     /**
-     * Base 64 image extension
+     * Base 64 data file extension
      */
-    private String base64ImageExtension;
-
-    /**
-     * Base 64 encoded image
-     */
-    private String base64Audio;
-
-    /**
-     * Base 64 image extension
-     */
-    private String base64AudioExtension;
+    private String base64DataFileExtension;
 
     /**
      * JWT token for the captcha
@@ -35,46 +25,26 @@ public class CaptchaToken {
     public CaptchaToken() {
     }
 
-    public CaptchaToken(String base64Image, String base64ImageExtension,
-                        String base64Audio, String base64AudioExtension,
-                        String captchaToken) {
-        this.base64Image = base64Image;
-        this.base64ImageExtension = base64ImageExtension;
-        this.base64Audio = base64Audio;
-        this.base64AudioExtension = base64AudioExtension;
+    public CaptchaToken(String base64Data, String base64DataFileExtension, String captchaToken) {
+        this.base64Data = base64Data;
+        this.base64DataFileExtension = base64DataFileExtension;
         this.captchaToken = captchaToken;
     }
 
-    public String getBase64Image() {
-        return base64Image;
+    public String getBase64Data() {
+        return base64Data;
     }
 
-    public void setBase64Image(String base64Image) {
-        this.base64Image = base64Image;
+    public void setBase64Data(String base64Data) {
+        this.base64Data = base64Data;
     }
 
-    public String getBase64ImageExtension() {
-        return base64ImageExtension;
+    public String getBase64DataFileExtension() {
+        return base64DataFileExtension;
     }
 
-    public void setBase64ImageExtension(String base64ImageExtension) {
-        this.base64ImageExtension = base64ImageExtension;
-    }
-
-    public String getBase64Audio() {
-        return base64Audio;
-    }
-
-    public void setBase64Audio(String base64Audio) {
-        this.base64Audio = base64Audio;
-    }
-
-    public String getBase64AudioExtension() {
-        return base64AudioExtension;
-    }
-
-    public void setBase64AudioExtension(String base64AudioExtension) {
-        this.base64AudioExtension = base64AudioExtension;
+    public void setBase64DataFileExtension(String base64DataFileExtension) {
+        this.base64DataFileExtension = base64DataFileExtension;
     }
 
     public String getCaptchaToken() {
@@ -88,8 +58,8 @@ public class CaptchaToken {
     @Override
     public String toString() {
         return "CaptchaToken{" +
-                "base64Image='" + base64Image + '\'' +
-                ", base64ImageExtension='" + base64ImageExtension + '\'' +
+                "base64Image='" + base64Data + '\'' +
+                ", base64ImageExtension='" + base64DataFileExtension + '\'' +
                 ", captchaToken='" + captchaToken + '\'' +
                 '}';
     }

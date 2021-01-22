@@ -62,7 +62,6 @@ public class CaptchaTokenManager {
             return new CaptchaToken(
                     Base64Util.encodeBufferedImageToString(captcha.getImage(), "png"),
                     "png",
-                    null, null,
                     token);
         } catch (JWTCreationException | IllegalArgumentException | IOException exception) {
             //Invalid Signing configuration / Couldn't convert Claims.
@@ -88,7 +87,6 @@ public class CaptchaTokenManager {
                     .withIssuer(issuer)
                     .sign(algorithm);
             return new CaptchaToken(
-                    null, null,
                     Base64Util.encodeAudioInputStreamToString(captcha.getChallenge().getAudioInputStream(),
                             AudioFileFormat.Type.WAVE),
                     "wav",
