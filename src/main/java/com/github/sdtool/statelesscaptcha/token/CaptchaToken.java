@@ -18,6 +18,16 @@ public class CaptchaToken {
     private String base64ImageExtension;
 
     /**
+     * Base 64 encoded image
+     */
+    private String base64Audio;
+
+    /**
+     * Base 64 image extension
+     */
+    private String base64AudioExtension;
+
+    /**
      * JWT token for the captcha
      */
     private String captchaToken;
@@ -25,9 +35,13 @@ public class CaptchaToken {
     public CaptchaToken() {
     }
 
-    public CaptchaToken(String base64Image, String base64ImageExtension, String captchaToken) {
+    public CaptchaToken(String base64Image, String base64ImageExtension,
+                        String base64Audio, String base64AudioExtension,
+                        String captchaToken) {
         this.base64Image = base64Image;
         this.base64ImageExtension = base64ImageExtension;
+        this.base64Audio = base64Audio;
+        this.base64AudioExtension = base64AudioExtension;
         this.captchaToken = captchaToken;
     }
 
@@ -45,6 +59,22 @@ public class CaptchaToken {
 
     public void setBase64ImageExtension(String base64ImageExtension) {
         this.base64ImageExtension = base64ImageExtension;
+    }
+
+    public String getBase64Audio() {
+        return base64Audio;
+    }
+
+    public void setBase64Audio(String base64Audio) {
+        this.base64Audio = base64Audio;
+    }
+
+    public String getBase64AudioExtension() {
+        return base64AudioExtension;
+    }
+
+    public void setBase64AudioExtension(String base64AudioExtension) {
+        this.base64AudioExtension = base64AudioExtension;
     }
 
     public String getCaptchaToken() {

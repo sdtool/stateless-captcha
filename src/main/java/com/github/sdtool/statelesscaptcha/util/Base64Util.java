@@ -1,6 +1,9 @@
 package com.github.sdtool.statelesscaptcha.util;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -28,6 +31,20 @@ public class Base64Util {
     public static String encodeBufferedImageToString(BufferedImage image, String format) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ImageIO.write(image, format, outputStream);
+        return encodeToString(outputStream.toByteArray());
+    }
+
+    /**
+     * Convert AudioInputStream to Base64 audio
+     *
+     * @param audioInputStream  BufferedImage to convert
+     * @param type audio format. eg. "wav"
+     * @return the encoded image string
+     * @throws IOException if exception converting image
+     */
+    public static String encodeAudioInputStreamToString(AudioInputStream audioInputStream, AudioFileFormat.Type type) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        AudioSystem.write(audioInputStream, type, outputStream);
         return encodeToString(outputStream.toByteArray());
     }
 

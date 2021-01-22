@@ -5,7 +5,7 @@ package com.github.sdtool.statelesscaptcha.token;
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
-public class CaptchaTokenVerification {
+public class CaptchaVerificationToken {
 
     /**
      * JWT token for the captcha
@@ -17,10 +17,10 @@ public class CaptchaTokenVerification {
      */
     private String captcha;
 
-    public CaptchaTokenVerification() {
+    public CaptchaVerificationToken() {
     }
 
-    public CaptchaTokenVerification(String captchaToken, String captcha) {
+    public CaptchaVerificationToken(String captchaToken, String captcha) {
         this.captchaToken = captchaToken;
         this.captcha = captcha;
     }
