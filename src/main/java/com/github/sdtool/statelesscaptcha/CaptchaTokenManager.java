@@ -54,7 +54,7 @@ public class CaptchaTokenManager {
     /**
      * Constructor with custom issuer and validity of token (in seconds)
      *
-     * @param issuer the issuer of the token
+     * @param issuer   the issuer of the token
      * @param validity the validity of token
      */
     public CaptchaTokenManager(String issuer, long validity) {
