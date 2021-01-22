@@ -59,7 +59,7 @@ public class Sample {
      * a {@link Sample} that has been modified from its original.
      *
      * @param sampleCount sample count
-     * @param sample data samples
+     * @param sample      data samples
      * @return A byte[] representing a sample
      * @see <a href="http://en.wiktionary.org/wiki/yak_shaving">Yak Shaving</a>
      */
@@ -125,11 +125,11 @@ public class Sample {
      * <code>getSampleCount()</code>, and the number of samples must not be so
      * large that the associated byte array cannot be allocated
      *
-     * @param begin the beginning
-     * @param end the end
+     * @param begin   the beginning
+     * @param end     the end
      * @param samples the samples
      * @return interleaved samples
-     * @throws IOException if exception reading
+     * @throws IOException              if exception reading
      * @throws IllegalArgumentException if invalid bytes
      */
     public double[] getInterleavedSamples(long begin, long end, double[] samples)
@@ -156,9 +156,9 @@ public class Sample {
      * Extract samples of a particular channel from interleavedSamples and copy
      * them into channelSamples
      *
-     * @param channel the channel
+     * @param channel            the channel
      * @param interleavedSamples samples
-     * @param channelSamples channel samples
+     * @param channelSamples     channel samples
      */
     public void getChannelSamples(int channel, double[] interleavedSamples,
                                   double[] channelSamples) {
@@ -172,7 +172,7 @@ public class Sample {
      * Convenience method. Extract left and right channels for common stereo
      * files. leftSamples and rightSamples must be of size getSampleCount()
      *
-     * @param leftSamples left samples
+     * @param leftSamples  left samples
      * @param rightSamples right samples
      * @throws IOException if exception reading
      */

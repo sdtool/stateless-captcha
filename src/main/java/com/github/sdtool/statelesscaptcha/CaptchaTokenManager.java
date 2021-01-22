@@ -23,27 +23,47 @@ import java.util.Date;
  */
 public class CaptchaTokenManager {
 
+    /**
+     * The issuer of token
+     */
     private String issuer;
 
+    /**
+     * The validity of token in seconds
+     */
     private long validity;
 
+    /**
+     * Default constructor
+     */
     public CaptchaTokenManager() {
         this.issuer = "stateless-captcha";
         this.validity = 30;
     }
 
+    /**
+     * Construction with custom validity
+     *
+     * @param validity the validity of token (in seconds)
+     */
     public CaptchaTokenManager(long validity) {
         this();
         this.validity = validity;
     }
 
+    /**
+     * Constructor with custom issuer and validity of token (in seconds)
+     *
+     * @param issuer the issuer of the token
+     * @param validity the validity of token
+     */
     public CaptchaTokenManager(String issuer, long validity) {
         this.issuer = issuer;
         this.validity = validity;
     }
 
     /**
-     * Generate token representation
+     * Generate token representation of text captcha
      *
      * @param captcha the captcha to convert
      * @return the token model
@@ -70,7 +90,7 @@ public class CaptchaTokenManager {
     }
 
     /**
-     * Generate token representation
+     * Generate token representation of audio captcha
      *
      * @param captcha the captcha to convert
      * @return the token model
@@ -100,7 +120,7 @@ public class CaptchaTokenManager {
     /**
      * Verify captcha
      *
-     * @param verification the verification model
+     * @param verification the verification token model
      * @return whether verified or not
      */
     public boolean verifyToken(CaptchaVerificationToken verification) {

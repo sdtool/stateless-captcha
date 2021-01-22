@@ -1,10 +1,19 @@
 package com.github.sdtool.statelesscaptcha.token;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * Token verification model
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CaptchaVerificationToken {
 
     /**
@@ -16,37 +25,5 @@ public class CaptchaVerificationToken {
      * Captcha to verify
      */
     private String captcha;
-
-    public CaptchaVerificationToken() {
-    }
-
-    public CaptchaVerificationToken(String captchaToken, String captcha) {
-        this.captchaToken = captchaToken;
-        this.captcha = captcha;
-    }
-
-    public String getCaptchaToken() {
-        return captchaToken;
-    }
-
-    public void setCaptchaToken(String captchaToken) {
-        this.captchaToken = captchaToken;
-    }
-
-    public String getCaptcha() {
-        return captcha;
-    }
-
-    public void setCaptcha(String captcha) {
-        this.captcha = captcha;
-    }
-
-    @Override
-    public String toString() {
-        return "CaptchaTokenVerification{" +
-                "captchaToken='" + captchaToken + '\'' +
-                ", captcha='" + captcha + '\'' +
-                '}';
-    }
 
 }

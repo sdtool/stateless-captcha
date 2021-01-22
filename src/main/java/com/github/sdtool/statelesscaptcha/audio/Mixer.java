@@ -37,7 +37,7 @@ public class Mixer {
     }
 
     public static Sample mix(Sample sample1, double volAdj1,
-                                   Sample sample2, double volAdj2) {
+                             Sample sample2, double volAdj2) {
         double[] s1_ary = sample1.getInterleavedSamples();
         double[] s2_ary = sample2.getInterleavedSamples();
 
@@ -62,7 +62,7 @@ public class Mixer {
     }
 
     private static double[] mix(double[] sample1, double volAdj1, double[] sample2,
-                                      double volAdj2) {
+                                double volAdj2) {
         for (int i = 0; i < sample1.length; i++) {
             if (i >= sample2.length) {
                 sample1[i] = 0;
@@ -74,7 +74,7 @@ public class Mixer {
     }
 
     private static AudioInputStream buildStream(long sampleCount,
-                                                      double[] sample) {
+                                                double[] sample) {
         byte[] buffer = Sample.asByteArray(sampleCount, sample);
         InputStream bais = new ByteArrayInputStream(buffer);
         return new AudioInputStream(bais, SC_AUDIO_FORMAT, sampleCount);

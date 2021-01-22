@@ -37,8 +37,8 @@ public class Base64Util {
     /**
      * Convert AudioInputStream to Base64 audio
      *
-     * @param audioInputStream  BufferedImage to convert
-     * @param type audio format. eg. "wav"
+     * @param audioInputStream BufferedImage to convert
+     * @param type             audio format. eg. "wav"
      * @return the encoded image string
      * @throws IOException if exception converting image
      */
