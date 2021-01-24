@@ -7,7 +7,6 @@ import javax.sound.sampled.AudioSystem;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
@@ -18,8 +17,6 @@ import java.util.Base64;
  */
 public class Base64Util {
 
-    private static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
-
     /**
      * Convert BufferedImage to Base64 image
      *
@@ -28,7 +25,7 @@ public class Base64Util {
      * @return the encoded image string
      * @throws IOException if exception converting image
      */
-    public static String encodeBufferedImageToString(BufferedImage image, String format) throws IOException {
+    public static String encodeImage(BufferedImage image, String format) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ImageIO.write(image, format, outputStream);
         return encodeToString(outputStream.toByteArray());
@@ -42,7 +39,7 @@ public class Base64Util {
      * @return the encoded image string
      * @throws IOException if exception converting image
      */
-    public static String encodeAudioInputStreamToString(AudioInputStream audioInputStream, AudioFileFormat.Type type) throws IOException {
+    public static String encodeAudio(AudioInputStream audioInputStream, AudioFileFormat.Type type) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         AudioSystem.write(audioInputStream, type, outputStream);
         return encodeToString(outputStream.toByteArray());
@@ -58,7 +55,7 @@ public class Base64Util {
         if (src.length == 0) {
             return "";
         }
-        return new String(encode(src), DEFAULT_CHARSET);
+        return new String(encode(src), StandardCharsets.UTF_8);
     }
 
     /**

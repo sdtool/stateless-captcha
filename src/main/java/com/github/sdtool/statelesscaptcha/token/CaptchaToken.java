@@ -19,16 +19,16 @@ public class CaptchaToken {
     /**
      * Base 64 encoded data
      */
-    private String base64Data;
+    private String data;
 
     /**
      * Base 64 data file extension
      */
-    private String base64DataFileExtension;
+    private String extension;
 
     /**
      * JWT token for the captcha
      */
-    private String captchaToken;
+    private String token;
 
 }

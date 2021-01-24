@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Token verification model
+ * The token properties
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
@@ -14,16 +14,16 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CaptchaVerificationToken {
+public class TokenProperties {
 
     /**
-     * JWT token for the captcha
+     * The issuer of token
      */
-    private String token;
+    private String issuer = "sdtool";
 
     /**
-     * Captcha to verify
+     * The validity of token in seconds
      */
-    private String captcha;
+    private long validity = 30;
 
 }

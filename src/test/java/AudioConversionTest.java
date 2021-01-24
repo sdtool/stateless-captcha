@@ -1,7 +1,12 @@
-import com.github.sdtool.statelesscaptcha.Captcha;
-import com.github.sdtool.statelesscaptcha.CaptchaTokenManager;
-import com.github.sdtool.statelesscaptcha.audio.AudioCaptcha;
+import com.github.sdtool.statelesscaptcha.core.audio.AudioCaptcha;
+import com.github.sdtool.statelesscaptcha.core.text.Captcha;
+import com.github.sdtool.statelesscaptcha.exception.VerificationException;
+import com.github.sdtool.statelesscaptcha.token.CaptchaToken;
+import com.github.sdtool.statelesscaptcha.token.CaptchaVerificationToken;
+import com.github.sdtool.statelesscaptcha.token.Creator;
+import com.github.sdtool.statelesscaptcha.token.Verifier;
 import com.github.sdtool.statelesscaptcha.util.Base64Util;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import javax.sound.sampled.AudioFileFormat;
@@ -16,7 +21,7 @@ public class AudioConversionTest {
                 .addNoise()
                 .addVoice()
                 .build();
-        Base64Util.encodeAudioInputStreamToString(captcha.getChallenge().getAudioInputStream(),
+        Base64Util.encodeAudio(captcha.getChallenge().getAudioInputStream(),
                 AudioFileFormat.Type.WAVE);
     }
 
@@ -27,7 +32,7 @@ public class AudioConversionTest {
                 .addNoise()
                 .addBorder()
                 .build();
-        new CaptchaTokenManager().buildToken(captcha);
+        new Creator().create(captcha);
     }
 
     @Test
@@ -37,7 +42,32 @@ public class AudioConversionTest {
                 .addNoise()
                 .addVoice()
                 .build();
-        new CaptchaTokenManager().buildToken(captcha);
+        new Creator().create(captcha);
+    }
+
+    @Test
+    public void testAudioTokenValidation() {
+        String ANSWER = "12345";
+        AudioCaptcha captcha = new AudioCaptcha.Builder()
+                .addAnswer(() -> ANSWER)
+                .addNoise()
+                .addVoice()
+                .build();
+        CaptchaToken token = new Creator().create(captcha);
+        new Verifier().verifyToken(new CaptchaVerificationToken(token.getToken(), ANSWER));
+    }
+
+    @Test
+    public void testAudioTokenValidationFail() {
+        String ANSWER = "12345";
+        AudioCaptcha captcha = new AudioCaptcha.Builder()
+                .addAnswer(() -> ANSWER)
+                .addNoise()
+                .addVoice()
+                .build();
+        CaptchaToken token = new Creator().create(captcha);
+        Assertions.assertThrows(VerificationException.class,
+                () -> new Verifier().verifyToken(new CaptchaVerificationToken(token.getToken(), ANSWER + "2")));
     }
 
 }
