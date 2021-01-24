@@ -43,7 +43,6 @@
         <jwt.version>3.12.0</jwt.version>
         <lombok.version>1.18.16</lombok.version>
         <junit.version>5.7.0</junit.version>
-        <junit-runner.version>1.7.0</junit-runner.version>
     </properties>
 
     <dependencies>
@@ -71,13 +70,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- test runner -->
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>${junit-runner.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
