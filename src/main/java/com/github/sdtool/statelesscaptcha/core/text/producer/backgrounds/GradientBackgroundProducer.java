@@ -32,8 +32,9 @@ public class GradientBackgroundProducer implements BackgroundProducer {
 
     /**
      * Constructor with customized from and to colors
+     *
      * @param from the from color
-     * @param to the to color
+     * @param to   the to color
      */
     public GradientBackgroundProducer(Color from, Color to) {
         _fromColor = from;
@@ -57,7 +58,7 @@ public class GradientBackgroundProducer implements BackgroundProducer {
     /**
      * Gets the background
      *
-     * @param width the width
+     * @param width  the width
      * @param height the height
      * @return The image with the background rendered.
      */

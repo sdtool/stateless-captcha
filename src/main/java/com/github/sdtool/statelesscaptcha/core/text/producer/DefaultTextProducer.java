@@ -45,7 +45,7 @@ public class DefaultTextProducer implements TextProducer {
     /**
      * Constructor with customized length and source characters
      *
-     * @param length the length
+     * @param length   the length
      * @param srcChars the source characts to chose characters from
      */
     public DefaultTextProducer(int length, char[] srcChars) {
@@ -55,7 +55,8 @@ public class DefaultTextProducer implements TextProducer {
 
     /**
      * Copies content to a new array
-     * @param original the original array
+     *
+     * @param original  the original array
      * @param newLength new length
      * @return the new array
      */
@@ -68,6 +69,7 @@ public class DefaultTextProducer implements TextProducer {
 
     /**
      * Gets the text
+     *
      * @return the text string
      */
     @Override

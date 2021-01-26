@@ -23,10 +23,6 @@ import com.github.sdtool.statelesscaptcha.core.audio.AudioCaptcha;
 import com.github.sdtool.statelesscaptcha.core.text.Captcha;
 import com.github.sdtool.statelesscaptcha.exception.CreationException;
 import com.github.sdtool.statelesscaptcha.util.Base64Util;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.sound.sampled.AudioFileFormat;
 import java.io.IOException;
@@ -39,10 +35,6 @@ import java.util.Date;
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Creator {
 
     /**
@@ -50,6 +42,39 @@ public class Creator {
      * Initiated to default
      */
     private TokenProperties properties = new TokenProperties();
+
+    /**
+     * Default constructor
+     */
+    public Creator() {
+    }
+
+    /**
+     * Constructor with customized token properties
+     *
+     * @param properties the token properties to use
+     */
+    public Creator(TokenProperties properties) {
+        this.properties = properties;
+    }
+
+    /**
+     * Gets the token properties
+     *
+     * @return the token properties
+     */
+    public TokenProperties getProperties() {
+        return properties;
+    }
+
+    /**
+     * Sets the token properties
+     *
+     * @param properties the token properties
+     */
+    public void setProperties(TokenProperties properties) {
+        this.properties = properties;
+    }
 
     /**
      * Generate token representation of text captcha

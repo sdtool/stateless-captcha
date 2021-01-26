@@ -86,6 +86,7 @@ public class RandomNumberVoiceProducer implements VoiceProducer {
 
     /**
      * Gets the voices
+     *
      * @return the voices
      */
     public Map<Integer, String[]> getVoices() {
@@ -94,6 +95,7 @@ public class RandomNumberVoiceProducer implements VoiceProducer {
 
     /**
      * Gets the vocalization
+     *
      * @param num the number o vocalize
      * @return the vocal/audio sample of the number
      */

@@ -53,6 +53,7 @@ public class RandomNoiseProducer implements NoiseProducer {
 
     /**
      * The constructor with customized noise files
+     *
      * @param noiseFiles the noise files to use
      */
     public RandomNoiseProducer(String[] noiseFiles) {

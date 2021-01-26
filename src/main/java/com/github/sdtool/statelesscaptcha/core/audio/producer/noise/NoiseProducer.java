@@ -13,6 +13,7 @@ import java.util.List;
 public interface NoiseProducer {
     /**
      * Adds noise
+     *
      * @param target the target
      * @return the sample
      */

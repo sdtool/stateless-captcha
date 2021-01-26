@@ -33,6 +33,7 @@ public class NumbersAnswerProducer implements TextProducer {
 
     /**
      * Constructor with custom length
+     *
      * @param length the length
      */
     public NumbersAnswerProducer(int length) {

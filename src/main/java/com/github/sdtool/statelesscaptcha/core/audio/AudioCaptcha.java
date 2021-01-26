@@ -1,9 +1,9 @@
 package com.github.sdtool.statelesscaptcha.core.audio;
 
-import com.github.sdtool.statelesscaptcha.core.audio.producer.noise.NoiseProducer;
-import com.github.sdtool.statelesscaptcha.core.audio.producer.noise.RandomNoiseProducer;
 import com.github.sdtool.statelesscaptcha.core.audio.producer.RandomNumberVoiceProducer;
 import com.github.sdtool.statelesscaptcha.core.audio.producer.VoiceProducer;
+import com.github.sdtool.statelesscaptcha.core.audio.producer.noise.NoiseProducer;
+import com.github.sdtool.statelesscaptcha.core.audio.producer.noise.RandomNoiseProducer;
 import com.github.sdtool.statelesscaptcha.core.text.producer.NumbersAnswerProducer;
 import com.github.sdtool.statelesscaptcha.core.text.producer.TextProducer;
 
@@ -47,6 +47,7 @@ public final class AudioCaptcha {
 
     /**
      * The constructor with customized builder
+     *
      * @param builder the captcha builder
      */
     private AudioCaptcha(Builder builder) {
@@ -55,6 +56,7 @@ public final class AudioCaptcha {
 
     /**
      * Verifies captcha
+     *
      * @param answer the answer to verify
      * @return if the answer is correct
      */
@@ -64,6 +66,7 @@ public final class AudioCaptcha {
 
     /**
      * Gets the answer
+     *
      * @return the answer
      */
     public String getAnswer() {
@@ -72,6 +75,7 @@ public final class AudioCaptcha {
 
     /**
      * Gets the challenge
+     *
      * @return the challenge
      */
     public Sample getChallenge() {
@@ -80,6 +84,7 @@ public final class AudioCaptcha {
 
     /**
      * To String
+     *
      * @return the string representation
      */
     @Override
@@ -140,6 +145,7 @@ public final class AudioCaptcha {
 
         /**
          * Add the voice with default voice producer
+         *
          * @return the builder with voice added
          */
         public Builder addVoice() {
@@ -171,6 +177,7 @@ public final class AudioCaptcha {
 
         /**
          * Adds noise to captcha with customized noise producer
+         *
          * @param noiseProd the noise producer
          * @return the builder with noise added
          */
@@ -181,6 +188,7 @@ public final class AudioCaptcha {
 
         /**
          * Builds the captcha
+         *
          * @return the audio captcha
          */
         public AudioCaptcha build() {
@@ -220,6 +228,7 @@ public final class AudioCaptcha {
 
         /**
          * To String
+         *
          * @return the string representation of the captcha
          */
         @Override

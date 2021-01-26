@@ -2,7 +2,6 @@ package com.github.sdtool.statelesscaptcha.core.text.gimpy;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
 /**
  * Overlays a warped grid to the image.
@@ -113,7 +112,7 @@ public class FishEyeGimpyRenderer implements GimpyRenderer {
      * Gets a random integer between start and end
      *
      * @param start the starting integer
-     * @param end the ending integer
+     * @param end   the ending integer
      * @return the random integer
      */
     private int ranInt(int start, int end) {

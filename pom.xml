@@ -6,7 +6,7 @@
 
     <groupId>com.github.sdtool</groupId>
     <artifactId>stateless-captcha</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -41,7 +41,6 @@
 
         <filters.version>2.0.235-1</filters.version>
         <jwt.version>3.12.0</jwt.version>
-        <lombok.version>1.18.16</lombok.version>
         <junit.version>5.7.0</junit.version>
     </properties>
 
@@ -58,13 +57,6 @@
             <artifactId>java-jwt</artifactId>
             <version>${jwt.version}</version>
         </dependency>
-        <!-- annotation based getter,setter etc -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
-        </dependency>
         <!-- test engine -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -79,7 +71,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -97,7 +89,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>

@@ -16,20 +16,11 @@
 
 package com.github.sdtool.statelesscaptcha.token;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 /**
  * The token properties
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class TokenProperties {
 
     /**
@@ -41,5 +32,71 @@ public class TokenProperties {
      * The validity of token in seconds
      */
     private long validity = 30;
+
+    /**
+     * Default constructor
+     */
+    public TokenProperties() {
+    }
+
+    /**
+     * Constructor with customized issuer and validity
+     *
+     * @param issuer   the issuer name
+     * @param validity the validity in seconds
+     */
+    public TokenProperties(String issuer, long validity) {
+        this.issuer = issuer;
+        this.validity = validity;
+    }
+
+    /**
+     * Gets the issuer
+     *
+     * @return the issuer
+     */
+    public String getIssuer() {
+        return issuer;
+    }
+
+    /**
+     * Sets the issuer
+     *
+     * @param issuer the issuer
+     */
+    public void setIssuer(String issuer) {
+        this.issuer = issuer;
+    }
+
+    /**
+     * Gets the validity in seconds
+     *
+     * @return the validity in seconds
+     */
+    public long getValidity() {
+        return validity;
+    }
+
+    /**
+     * Sets the validity
+     *
+     * @param validity the validity in seconds
+     */
+    public void setValidity(long validity) {
+        this.validity = validity;
+    }
+
+    /**
+     * To String
+     *
+     * @return the string representation of the token properties
+     */
+    @Override
+    public String toString() {
+        return "TokenProperties{" +
+                "issuer='" + issuer + '\'' +
+                ", validity=" + validity +
+                '}';
+    }
 
 }

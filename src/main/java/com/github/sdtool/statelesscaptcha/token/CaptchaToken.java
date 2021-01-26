@@ -16,20 +16,11 @@
 
 package com.github.sdtool.statelesscaptcha.token;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 /**
  * JWT Token (JWS) representation of Captcha, with base64 encoded image
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class CaptchaToken {
 
     /**
@@ -46,5 +37,92 @@ public class CaptchaToken {
      * JWT token for the captcha
      */
     private String token;
+
+    /**
+     * Default constructor
+     */
+    public CaptchaToken() {
+    }
+
+    /**
+     * Constructor with customized data, extension and token
+     *
+     * @param data      the base 64 data
+     * @param extension the data's file extension
+     * @param token     the token
+     */
+    public CaptchaToken(String data, String extension, String token) {
+        this.data = data;
+        this.extension = extension;
+        this.token = token;
+    }
+
+    /**
+     * Gets the data
+     *
+     * @return the data
+     */
+    public String getData() {
+        return data;
+    }
+
+    /**
+     * Sets the data
+     *
+     * @param data the data
+     */
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    /**
+     * Gets the extension
+     *
+     * @return the extension
+     */
+    public String getExtension() {
+        return extension;
+    }
+
+    /**
+     * Sets the extension
+     *
+     * @param extension the extension
+     */
+    public void setExtension(String extension) {
+        this.extension = extension;
+    }
+
+    /**
+     * Gets the token
+     *
+     * @return the token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * Sets the token
+     *
+     * @param token the token
+     */
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    /**
+     * To String
+     *
+     * @return the string representation of the token
+     */
+    @Override
+    public String toString() {
+        return "CaptchaToken{" +
+                "data='" + data + '\'' +
+                ", extension='" + extension + '\'' +
+                ", token='" + token + '\'' +
+                '}';
+    }
 
 }

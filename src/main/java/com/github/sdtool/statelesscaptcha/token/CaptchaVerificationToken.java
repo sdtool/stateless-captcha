@@ -16,20 +16,11 @@
 
 package com.github.sdtool.statelesscaptcha.token;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 /**
  * Token verification model
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class CaptchaVerificationToken {
 
     /**
@@ -41,5 +32,71 @@ public class CaptchaVerificationToken {
      * Captcha to verify
      */
     private String captcha;
+
+    /**
+     * Default constructor
+     */
+    public CaptchaVerificationToken() {
+    }
+
+    /**
+     * Constructor with customized token and captcha
+     *
+     * @param token   the token
+     * @param captcha the captcha to verify
+     */
+    public CaptchaVerificationToken(String token, String captcha) {
+        this.token = token;
+        this.captcha = captcha;
+    }
+
+    /**
+     * Gets the token
+     *
+     * @return the token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * Sets the token
+     *
+     * @param token the token
+     */
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    /**
+     * Gets the captcha
+     *
+     * @return the captcha
+     */
+    public String getCaptcha() {
+        return captcha;
+    }
+
+    /**
+     * Sets the captcha
+     *
+     * @param captcha the captcha
+     */
+    public void setCaptcha(String captcha) {
+        this.captcha = captcha;
+    }
+
+    /**
+     * To String
+     *
+     * @return the string representation of the verification token
+     */
+    @Override
+    public String toString() {
+        return "CaptchaVerificationToken{" +
+                "token='" + token + '\'' +
+                ", captcha='" + captcha + '\'' +
+                '}';
+    }
 
 }

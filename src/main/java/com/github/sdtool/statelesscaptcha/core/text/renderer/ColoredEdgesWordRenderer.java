@@ -87,8 +87,8 @@ public class ColoredEdgesWordRenderer implements WordRenderer {
      * Build a <code>WordRenderer</code> using the given <code>Color</code>s and
      * <code>Font</code>s and <code>Stroke Width</code>.
      *
-     * @param colors List of colors
-     * @param fonts  List of fonts
+     * @param colors      List of colors
+     * @param fonts       List of fonts
      * @param strokeWidth Stroke width
      */
     public ColoredEdgesWordRenderer(List<Color> colors, List<Font> fonts, float strokeWidth) {
@@ -133,6 +133,7 @@ public class ColoredEdgesWordRenderer implements WordRenderer {
 
     /**
      * Gets a random color
+     *
      * @return the color
      */
     private Color getRandomColor() {
@@ -141,6 +142,7 @@ public class ColoredEdgesWordRenderer implements WordRenderer {
 
     /**
      * Gsts a random font
+     *
      * @return the font
      */
     private Font getRandomFont() {
@@ -149,6 +151,7 @@ public class ColoredEdgesWordRenderer implements WordRenderer {
 
     /**
      * Gets a random object from a list of objects
+     *
      * @param objs List of objects to refer to
      * @return the object
      */

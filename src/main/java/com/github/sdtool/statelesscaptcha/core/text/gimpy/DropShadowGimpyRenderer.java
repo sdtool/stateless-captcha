@@ -40,7 +40,8 @@ public class DropShadowGimpyRenderer implements GimpyRenderer {
 
     /**
      * Constructor with customized radius and opacity
-     * @param radius the radius
+     *
+     * @param radius  the radius
      * @param opacity the opacity
      */
     public DropShadowGimpyRenderer(int radius, int opacity) {

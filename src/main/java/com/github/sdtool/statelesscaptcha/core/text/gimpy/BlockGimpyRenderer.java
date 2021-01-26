@@ -32,6 +32,7 @@ public class BlockGimpyRenderer implements GimpyRenderer {
 
     /**
      * The constructor with customized block size
+     *
      * @param blockSize the block size
      */
     public BlockGimpyRenderer(int blockSize) {

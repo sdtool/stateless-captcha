@@ -49,7 +49,7 @@ public final class FlatColorBackgroundProducer implements BackgroundProducer {
     /**
      * Gets the background
      *
-     * @param width the width
+     * @param width  the width
      * @param height the height
      * @return The image with the background rendered.
      */

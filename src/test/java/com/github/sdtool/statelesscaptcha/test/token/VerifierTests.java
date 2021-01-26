@@ -36,7 +36,7 @@ public class VerifierTests {
                 .addVoice()
                 .build();
         CaptchaToken token = new Creator().create(captcha);
-        new Verifier().verifyToken(new CaptchaVerificationToken(token.getToken(), ANSWER));
+        new Verifier().verify(new CaptchaVerificationToken(token.getToken(), ANSWER));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class VerifierTests {
                 .build();
         CaptchaToken token = new Creator().create(captcha);
         Assertions.assertThrows(VerificationException.class,
-                () -> new Verifier().verifyToken(new CaptchaVerificationToken(token.getToken(), ANSWER + "2")));
+                () -> new Verifier().verify(new CaptchaVerificationToken(token.getToken(), ANSWER + "2")));
     }
 
 }

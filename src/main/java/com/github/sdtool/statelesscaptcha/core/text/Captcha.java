@@ -1,13 +1,13 @@
 package com.github.sdtool.statelesscaptcha.core.text;
 
-import com.github.sdtool.statelesscaptcha.core.text.producer.backgrounds.BackgroundProducer;
-import com.github.sdtool.statelesscaptcha.core.text.producer.backgrounds.TransparentBackgroundProducer;
 import com.github.sdtool.statelesscaptcha.core.text.gimpy.GimpyRenderer;
 import com.github.sdtool.statelesscaptcha.core.text.gimpy.RippleGimpyRenderer;
-import com.github.sdtool.statelesscaptcha.core.text.producer.noise.CurvedLineNoiseProducer;
-import com.github.sdtool.statelesscaptcha.core.text.producer.noise.NoiseProducer;
 import com.github.sdtool.statelesscaptcha.core.text.producer.DefaultTextProducer;
 import com.github.sdtool.statelesscaptcha.core.text.producer.TextProducer;
+import com.github.sdtool.statelesscaptcha.core.text.producer.backgrounds.BackgroundProducer;
+import com.github.sdtool.statelesscaptcha.core.text.producer.backgrounds.TransparentBackgroundProducer;
+import com.github.sdtool.statelesscaptcha.core.text.producer.noise.CurvedLineNoiseProducer;
+import com.github.sdtool.statelesscaptcha.core.text.producer.noise.NoiseProducer;
 import com.github.sdtool.statelesscaptcha.core.text.renderer.DefaultWordRenderer;
 import com.github.sdtool.statelesscaptcha.core.text.renderer.WordRenderer;
 
@@ -61,6 +61,7 @@ public final class Captcha implements Serializable {
 
     /**
      * Constructor with customized builder
+     *
      * @param builder the builder to use
      */
     private Captcha(Builder builder) {
@@ -69,6 +70,7 @@ public final class Captcha implements Serializable {
 
     /**
      * Verifies if given answer is correct
+     *
      * @param answer the answer to check
      * @return if the answer is correct
      */
@@ -78,6 +80,7 @@ public final class Captcha implements Serializable {
 
     /**
      * Gets the answer
+     *
      * @return the answer
      */
     public String getAnswer() {
@@ -95,6 +98,7 @@ public final class Captcha implements Serializable {
 
     /**
      * Gets the timestamp
+     *
      * @return the date respresnting the time stamp
      */
     public Date getTimeStamp() {
@@ -103,6 +107,7 @@ public final class Captcha implements Serializable {
 
     /**
      * To String
+     *
      * @return the string representation
      */
     @Override
@@ -142,7 +147,8 @@ public final class Captcha implements Serializable {
 
         /**
          * Constructor with customized width and height
-         * @param width the width
+         *
+         * @param width  the width
          * @param height the height
          */
         public Builder(int width, int height) {
@@ -306,6 +312,7 @@ public final class Captcha implements Serializable {
 
         /**
          * To String
+         *
          * @return the string representation of the builder
          */
         @Override
@@ -321,6 +328,7 @@ public final class Captcha implements Serializable {
 
         /**
          * Writes the captcha info to object output
+         *
          * @param out the output stream to write to
          * @throws IOException when error creating image stream
          */
@@ -332,8 +340,9 @@ public final class Captcha implements Serializable {
 
         /**
          * Reads captcha info from an object input
+         *
          * @param in the input stream to read from
-         * @throws IOException when creating stream
+         * @throws IOException            when creating stream
          * @throws ClassNotFoundException when error reading input object
          */
         private void readObject(ObjectInputStream in) throws IOException,

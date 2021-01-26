@@ -18,6 +18,7 @@ public class Mixer {
 
     /**
      * Appends the samples together
+     *
      * @param samples the list of samples
      * @return the combined sample
      */
@@ -67,7 +68,7 @@ public class Mixer {
      * Concatenates all double array
      *
      * @param first the first array
-     * @param rest the rest of the arrays
+     * @param rest  the rest of the arrays
      * @return the combined array
      */
     private static double[] concatAll(double[] first, double[]... rest) {
@@ -109,7 +110,7 @@ public class Mixer {
      * Generates the audio stream
      *
      * @param sampleCount the sample count
-     * @param sample the samples as array
+     * @param sample      the samples as array
      * @return the audio stream
      */
     private static AudioInputStream buildStream(long sampleCount,
@@ -123,7 +124,7 @@ public class Mixer {
      * Builds audio sample from array sample
      *
      * @param sampleCount the sample count
-     * @param sample the samples as array
+     * @param sample      the samples as array
      * @return the audio sample
      */
     private static Sample buildSample(long sampleCount, double[] sample) {

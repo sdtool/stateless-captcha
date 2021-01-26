@@ -40,6 +40,7 @@ public class Sample {
 
     /**
      * Constructor with customized input stream
+     *
      * @param is the input stream
      */
     public Sample(InputStream is) {
@@ -85,6 +86,7 @@ public class Sample {
 
     /**
      * Checks audio format
+     *
      * @param af the audio format to check
      */
     private static void checkFormat(AudioFormat af) {
@@ -98,6 +100,7 @@ public class Sample {
 
     /**
      * Gets the the audio stream
+     *
      * @return the audio input stream
      */
     public AudioInputStream getAudioInputStream() {
@@ -106,6 +109,7 @@ public class Sample {
 
     /**
      * Gets the audio format
+     *
      * @return the audio format
      */
     public AudioFormat getFormat() {
@@ -126,6 +130,7 @@ public class Sample {
 
     /**
      * Gets interleaved samples
+     *
      * @return the interleaved samples
      */
     public double[] getInterleavedSamples() {
@@ -211,7 +216,7 @@ public class Sample {
     /**
      * Decode bytes of audioBytes into audioSamples
      *
-     * @param audioBytes the audio bytes
+     * @param audioBytes   the audio bytes
      * @param audioSamples the audio samples
      */
     public void decodeBytes(byte[] audioBytes, double[] audioSamples) {

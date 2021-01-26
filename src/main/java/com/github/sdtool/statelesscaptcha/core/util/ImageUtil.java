@@ -14,7 +14,7 @@ public class ImageUtil {
     /**
      * Applies the image op filter to image
      *
-     * @param img the image to apply to
+     * @param img    the image to apply to
      * @param filter the filter to apply
      */
     public static void applyFilter(BufferedImage img, BufferedImageOp filter) {

@@ -12,6 +12,7 @@ import com.github.sdtool.statelesscaptcha.core.audio.Sample;
 public interface VoiceProducer {
     /**
      * Gets vocalization
+     *
      * @param letter the letter to convert
      * @return the voice sample
      */

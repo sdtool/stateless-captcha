@@ -34,7 +34,8 @@ public class StraightLineNoiseProducer implements NoiseProducer {
 
     /**
      * Constructor with customized color and thickness
-     * @param color the color
+     *
+     * @param color     the color
      * @param thickness thickness
      */
     public StraightLineNoiseProducer(Color color, int thickness) {
@@ -59,7 +60,8 @@ public class StraightLineNoiseProducer implements NoiseProducer {
 
     /**
      * Draws a line
-     * @param g the graphics
+     *
+     * @param g  the graphics
      * @param y1 location y1
      * @param x2 location x2
      * @param y2 location y2

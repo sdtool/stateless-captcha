@@ -21,20 +21,12 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.github.sdtool.statelesscaptcha.exception.VerificationException;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * The token verifier
  *
  * @author <a href="mailto:subhajitdas298@gmail.com">Subhajit Das</a>
  */
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Verifier {
 
     /**
@@ -44,11 +36,44 @@ public class Verifier {
     private TokenProperties properties = new TokenProperties();
 
     /**
+     * Default constructor
+     */
+    public Verifier() {
+    }
+
+    /**
+     * Constructor with customized token properties
+     *
+     * @param properties the token properties to use
+     */
+    public Verifier(TokenProperties properties) {
+        this.properties = properties;
+    }
+
+    /**
+     * Gets the token properties
+     *
+     * @return the token properties
+     */
+    public TokenProperties getProperties() {
+        return properties;
+    }
+
+    /**
+     * Sets the token properties
+     *
+     * @param properties the token properties
+     */
+    public void setProperties(TokenProperties properties) {
+        this.properties = properties;
+    }
+
+    /**
      * Verify captcha
      *
      * @param verification the verification token model
      */
-    public void verifyToken(CaptchaVerificationToken verification) {
+    public void verify(CaptchaVerificationToken verification) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(verification.getCaptcha());
             JWTVerifier verifier = JWT.require(algorithm)
