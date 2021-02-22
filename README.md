@@ -10,10 +10,8 @@ Based on http://simplecaptcha.sourceforge.net/ version 1.2.1
 ### Build captcha
 
 ```java
-Captcha captcha=new Captcha.Builder(200,50)
+Captcha captcha=new Captcha.Builder(200, 50)
         .addText()
-        .addNoise()
-        .addNoise()
         .addNoise()
         .addBackground()
         .build();
@@ -22,12 +20,16 @@ Captcha captcha=new Captcha.Builder(200,50)
 ### Build Token and Verify
 
 ```java
-CaptchaTokenManager manager=new CaptchaTokenManager("sd",300);
+TokenProperties props = new TokenProperties("sd", 300)
 
+// Create token (creator side, can be in any microservice/application)
+Creator creator = new Creator(props);
 // build token with captcha from earlier stage
-        manager.build(captcha);
+CaptchaToken token = creator.create(captcha);
 
-// verify token
-        CaptchaTokenVerification verification=<user side data>
-        manager.verify(verification);
+// verify token (verifier side, can be in any other microservice/application)
+CaptchaVerificationToken verification=<user side data>
+Verifier verifier = Verifier(props);
+// verify token. If invalid VerificationException is thrown
+verifier.verify(verification);
 ```
