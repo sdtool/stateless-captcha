@@ -1,6 +1,8 @@
-# stateless-captcha for java
+# Stateless Captcha for Java
 
-Simple standalone stateless captcha library for Java 8. Stateless verification implementation for custom usage (such as
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.sdtool/stateless-captcha/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.sdtool/stateless-captcha)
+
+Simple standalone stateless captcha library for Java 8 (and above). Stateless verification implementation for custom usage (such as
 spring boot stateless microservice mode).
 
 Based on http://simplecaptcha.sourceforge.net/ version 1.2.1
